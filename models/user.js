@@ -11,6 +11,9 @@ const UserSchema = mongoose.Schema({
     }
 });
 
+//From the Mongoose documentation -- "The first argument is the singular name of the collection your model is for. 
+//Mongoose automatically looks for the plural, lowercased version of your model name". Thus, it looks at the "user"
+//from the database collection "users", in whatever instance is called.
 const User = module.exports = mongoose.model('User', UserSchema);
 
 module.exports.createUser = function(newUser, callback){

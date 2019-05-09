@@ -11,9 +11,9 @@
     <div>
         <h2>LOGIN</h2>
 
-        {{#if errors}}
-            {{#each errors}}
-                <div>{{msg}}</div>
+        {{#if err}}
+            {{#each err}}
+                <div>{{message}}</div>
             {{/each}}
         {{/if}}
 
@@ -21,12 +21,15 @@
             <label for="username">Username:</label>
             <input id="username" name="username" type="text">
             <label for="username">Password:</label>
-            <input id="password" name="password" type="text">
+            <input id="password" name="password" type="password">
             <button type="submit">Sign In</button>
         </form>
     </div>
 
-<!--$erveThe5erpent-->
+<!--
+    Username: Virgil
+    Password: VirtueWithoutFa!th
+-->
 
 </body>
 </html>
