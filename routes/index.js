@@ -66,16 +66,16 @@ router.post('/circle1',
 });
 
 router.post('/circle2', function(req, res){
-  const password_value = req.body.password_value;
-  const username_value = req.body.username_value;
-  User.findOne({username: username_value}, function(err, user){
+  const password = req.body.password;
+  const username = req.body.username;
+  User.findOne({username: username, password: password}, function(err, user){
       if(err) { return done(err); }
-      if(!user) {
-          console.log("User "+username_value+" does not exist");
+      if(!req.user) {
+          console.log("User "+username+" does not exist");
           res.redirect('/circle1');
       }
-      if(user.password != password_value) {
-          console.log("Login attempted with valid username, but incorrect password: "+ password_value);
+      if(user.password != password) {
+          console.log("Login attempted with valid username, but incorrect password: "+ password);
           res.redirect('/circle1');
         }
       else {
